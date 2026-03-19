@@ -20,7 +20,7 @@ class: text-center
 layout: cover
 hideInToc: true
 
-download: true
+download: false
 ---
 
 
