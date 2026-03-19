@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build -- --base /EMencode-presentation/
+      - run: npx slidev build --base /EMencode-presentation/ --no-export
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
