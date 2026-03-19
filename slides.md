@@ -57,7 +57,7 @@ layout: center
 
 ---
 layout: image-right
-image: ./img/workflow.png
+image: /img/workflow.png
 backgroundSize: contain
 ---
 
@@ -81,7 +81,7 @@ backgroundSize: contain
 - Future work was to investigate lossy compression algorithms, and build a dedicated compression/archival tool for eBIC to use.
 
 
-<img src="./img/benchmark.png" class="max-h-52 object-contain mx-auto" />
+<img src="/img/benchmark.png" class="max-h-52 object-contain mx-auto" />
 
 ---
 
@@ -129,14 +129,14 @@ layout: two-cols-header
 
 <div class="flex flex-col items-center justify-center h-full">
   <p class="text-sm font-bold opacity-60 mb-2">CLI</p>
-  <img src="./img/cli.png" class="max-h-70 object-contain rounded shadow" />
+  <img src="/img/cli.png" class="max-h-70 object-contain rounded shadow" />
 </div>
 
 ::right::
 
 <div class="flex flex-col items-center justify-center h-full">
   <p class="text-sm font-bold opacity-60 mb-2">GUI</p>
-  <img src="./img/gui.png" class="max-h-70 object-contain rounded shadow" />
+  <img src="/img/gui.png" class="max-h-70 object-contain rounded shadow" />
 </div>
 
 
@@ -177,7 +177,7 @@ archive.h5
 
 ---
 layout: image-right
-image: ./img/truncate.jpg
+image: /img/truncate.jpg
 backgroundSize: contain
 ---
 
@@ -211,7 +211,7 @@ backgroundSize: contain
 6-bit truncation (no clamping) on a RELION 3.0 motion-corrected micrograph (Falcon-III, 3838×3710 px, float32). **6.5× compression**, correlation 0.997, FRC ≈ 1.0 at all frequencies.
 (Random aside: threw claude at this and found my code supported mrc with minimal modification needed)
 
-<img src="./img/analysis_dashboard.png" class="max-h-90 object-contain mx-auto" />
+<img src="/img/analysis_dashboard.png" class="max-h-90 object-contain mx-auto" />
 
 
 ---
