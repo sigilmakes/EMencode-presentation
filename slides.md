@@ -101,22 +101,34 @@ backgroundSize: contain
 
 # Interface — Architecture
 
-All interfaces in EMencode are wrappers around jobs. All error handling, data validation, MPI ranking, and logging follows a consistent pattern. Hooking new functionality into the GUI/CLI/API just requires the job and some boilerplate. 
-
 ```mermaid
-graph TD
-    subgraph "Job Architecture"
-        JobBase["Job base class<br/><i>w/ optional hooks for MPI</i>"]
-        Options["Option types<br/><i></i>"]
-        ResultCls["Result<br/><i>Job Outputs + Error Handling</i>"]
-        ProgressCls["Progress callbacks<br/><i></i>"]
-        MPIRunner["JobRunner<br/><i>Per-file MPI process allocator</i>"]
-    end
+flowchart TD
+  subgraph "Frontend Entrypoints"
+    CLI["CLI"]
+    GUI["GUI (PyQt6)"]
+    MPI["MPI Runner"]
+    API["Python API"]
+  end
 
-    JobBase --> Options
-    JobBase --> ResultCls
-    JobBase --> ProgressCls
-    MPIRunner --> JobBase
+  subgraph "Job Layer"
+    Jobs["Job System"]
+  end
+
+  subgraph "Core Subsystems"
+    Compressors["Compressors"]
+    Archive["HDF5 Archive"]
+    Analysis["Analysis"]
+    Convert["Format Conversion"]
+  end
+
+CLI --> Jobs
+GUI --> Jobs
+MPI --> Jobs
+API --> Jobs
+Jobs --> Compressors
+Jobs --> Archive
+Jobs --> Analysis
+Jobs --> Convert
 ```
 
 ---
